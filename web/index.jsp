@@ -19,7 +19,7 @@
 
 <body>
 
-<div id="container">
+<div id="container ">
 
 <h1><span class="graytext">HOME PAGE</span></h1>
 
