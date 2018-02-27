@@ -5,8 +5,12 @@
  */
 package edu.wctc.dj.controller;
 
+import edu.wctc.dj.model.Product;
+import edu.wctc.dj.model.ProductService;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -57,9 +61,33 @@ public class ProductController extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
+		throws ServletException, IOException {
+
+		ProductService productService = new ProductService();
+		RequestDispatcher dispatcher = null;
+
+		String id = request.getParameter("id");
+		String search = request.getParameter("search");
+		if (id != null) {
+			Product product = productService.getProduct(id);
+			request.setAttribute("product", product);
+			dispatcher =
+				request.getRequestDispatcher("/productDetail.jsp");
+		} else if (search != null) {
+			List<Product> productList = productService.findNames(search);
+			request.setAttribute("productList", productList);
+			dispatcher =
+				request.getRequestDispatcher("/productList.jsp");
+		} else {
+			List<Product> productList = productService.getAllProducts();
+			request.setAttribute("productList", productList);
+			dispatcher =
+				request.getRequestDispatcher("/productList.jsp");
+		}
+
+		dispatcher.forward(request, response);
+		
+	}
 
     /**
      * Handles the HTTP <code>POST</code> method.
