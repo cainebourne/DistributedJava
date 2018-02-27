@@ -5,15 +5,14 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>Troy's Product Website</title>
-  <link href="css/styles.css" rel="stylesheet" type="text/css" />
+  <link href="cssfolder/styles.css" rel="stylesheet" type="text/css"/>
 
 </head>
 
@@ -24,10 +23,10 @@
 <h1><span class="graytext">SHOPPING CART</span></h1>
 
 <ul>
-  <li><a href="index.html">Home</a></li>
-  <li><a href="productlist.html">Product List</a></li>
-  <li><a href="productdetail.html">Product Detail</a></li>
-  <li><a class="active" href="shoppingcart.html">View Shopping Cart</a></li>
+  <li><a href="index.jsp">Home</a></li>
+  <li><a href="productlist.jsp">Product List</a></li>
+  <li><a href="productdetail.jsp">Product Detail</a></li>
+  <li><a class="active" href="shoppingcart.jsp">View Shopping Cart</a></li>
 </ul>
 
 
