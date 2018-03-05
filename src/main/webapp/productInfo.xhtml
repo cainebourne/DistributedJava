@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Troy's Computer Parts</title>
+        <link href="cssfolder/styles.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+    <h:body>
+	<div id="wrapper">
+	    <header>
+		<h1>Troy's Computer Parts</h1>
+	    </header>
+	    <nav>
+		<ul>
+		    <li>
+			<h:link value="Home" outcome="index.xhtml"/>
+		    </li>
+		    <li>
+			<h:link value="Products" outcome="productList.xhtml"/>
+		    </li>
+		    <li>
+			<h:link value="Shopping Cart" outcome="shoppingCart.xhtml"/>
+		    </li>
+		    <li>
+			<h:form styleClass="navSearchForm" >
+			    <h:inputText id='searchString' value="#{productBean.searchString}" alt="Product Name Search Input" >
+				<f:ajax />
+			    </h:inputText>
+			    <h:commandButton value="Search" action="#{productBean.searchProducts}" />
+			</h:form>
+		    </li>
+		</ul>
+	    </nav>
+	    <main>
+		<div class="product">
+		    <div class="name">
+			<h:outputText value="#{productBean.product.productName}"/>
+		    </div>
+		    <div class="price">
+			<h:outputText value="#{productBean.product.price}">
+			    <f:convertNumber type="currency"/>
+			</h:outputText>
+		    </div>
+		    <br/>
+		    <div class="description">
+			<h:outputText value="#{productBean.product.description}"/>
+		    </div>
+		    <br/>
+		    <div class="id">
+			<h:outputText value="#{productBean.product.productId}"/>
+		    </div>
+		</div>
+	    </main>
+	</div>
+    </h:body>
+</html>
+
