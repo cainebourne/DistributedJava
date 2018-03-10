@@ -47,9 +47,9 @@ public class ProductController extends HttpServlet {
 				dispatcher = request.getRequestDispatcher("/productInfo.jsp");
 				request.setAttribute("product", p);
 			}
-		}else if(search != null){
+		}else {
 			dispatcher = request.getRequestDispatcher("/productList.jsp");
-			request.setAttribute("productList", (search.isEmpty()) ? pc.getAllProducts() : pc.getProductsThatContain(search));
+			request.setAttribute("productList", (search == null || search.isEmpty()) ? pc.getAllProducts() : pc.getProductsThatContain(search));
 		}
 		
 		dispatcher.forward(request, response);
