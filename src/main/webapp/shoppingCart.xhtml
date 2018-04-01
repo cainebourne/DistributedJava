@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <head>
+        <title>Shopping Cart</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link href="cssfolder/styles.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <h:body>
+	<div id="wrapper">
+	    <header>
+		<h1>Shopping Cart</h1>
+	    </header>
+	    <nav>
+		<ul>
+		    <li>
+			<h:link value="Home" outcome="index.xhtml"/>
+		    </li>
+		    <li>
+			<h:link value="Products" outcome="productList.xhtml"/>
+		    </li>
+		    <li>
+			<h:link value="Shopping Cart" outcome="shoppingCart.xhtml"/>
+		    </li>
+		    <li>
+			<h:form styleClass="navSearchForm" >
+			    <h:inputText id='searchString' value="#{productBean.searchString}" alt="Product Name Search Input" >
+				<f:ajax />
+			    </h:inputText>
+			    <h:commandButton value="Search" action="#{productBean.searchProducts}" />
+			</h:form>
+		    </li>
+		</ul>
+	    </nav>
+	    <main>
+		<ui:repeat value="#{shoppingCartBean.shoppingCart.products}" var="item">
+		    <div class="row">
+			<div class="id">
+			    <h:outputText value="#{item.productId}"/>
+			</div>
+			<div class="name">
+			    <h:outputText value="#{item.productName}"/>
+			</div>
+			<div class="price">
+			    <h:outputText value="#{item.price}">
+				<f:convertNumber type="currency"/>
+			    </h:outputText> * 
+			    <h:outputText value="#{shoppingCartBean.shoppingCart.getQuantityFor(item)}"/> = 
+			    <h:outputText value="#{item.price * shoppingCartBean.shoppingCart.getQuantityFor(item)}">
+				<f:convertNumber type="currency"/>
+			    </h:outputText>
+			</div>
+		    </div>
+		</ui:repeat>
+		<div class="total">
+		    Total: 
+			#{shoppingCartBean.setTotal()}
+		    <h:outputText value="#{shoppingCartBean.total}">
+			<f:convertNumber type="currency"/>
+		    </h:outputText>
+		</div>
+	    </main>
+	</div>
+    </h:body>
+</html>
+
