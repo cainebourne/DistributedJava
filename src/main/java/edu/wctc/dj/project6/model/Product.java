@@ -2,7 +2,7 @@
 package edu.wctc.dj.project6.model;
 
 /**
- *
+ * new comment
  * @author cainebourne
  */
 public final class Product {
