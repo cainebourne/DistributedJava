@@ -22,11 +22,12 @@ public class ProductService {
                 if(productList != null){
                      CustomerDAO customerDao = new  CustomerDAO();
                     for (Product product : productList){
-                        product.setCustomerName
+                        product.setCustomerName(customerDAO.getCustomer()FisdtName));
                         
                     }
                          
                 }
+    return productList;
 	}
 	
 	public List<Product> getProductsThatContain(String search){
