@@ -13,16 +13,14 @@ import java.util.List;
  */
 public class ProductService {
     
-       //could not figure out how to implement this section after following class video
-	
-	/*public List<Product> getAllProducts() throws Exception{
+       public List<Product> getAllProducts() throws Exception{
 		ProductsDAO productDAO = new ProductsDAO();
                 List<Product> productList = productDAO.getProducts();
                 
                 if(productList != null){
-                     CustomerDAO customerDao = new  CustomerDAO();
+                     
                     for (Product product : productList){
-                        product.setCustomerName(customerDAO.getCustomer()FisdtName));
+                       
                         
                     }
                          
@@ -38,39 +36,40 @@ public class ProductService {
 	public Product getProductById(String searchId){
 		//todo
                 return null;
-}*/
+}}
+        
     
-    private final List<Product> products = Arrays.asList(
-			new Product("A01","Motherboard", 100, "Plug everything into this"),
-			new Product("B02","Ram", 50, "Random access memory"),
-			new Product("C03","Processor", 200, "The Brain of your computer"),
-			new Product("D04","Graphics Card", 5000, "For video games and to make the computer very expensive especially now that everyone is crytpo mining")
-	);
-	
-	public List<Product> getAllProducts(){
-		return products;
-	}
-	
-	public List<Product> getProductsThatContain(String search){
-		List<Product> ret = new ArrayList<>();
-		
-		products.stream().filter
-				((prod) -> 
-						(prod.getProductName().contains(search) || prod.getDescription().contains(search))
-				).forEachOrdered((prod) -> {
-									ret.add(prod);
-								});
-		
-		return ret;
-	}
-	
-	public Product getProductById(String searchId){
-		for(Product prod : products){
-			if(prod.getProductId().equals(searchId))
-				return prod;
-		}
-		
-		return null;
-	}
-    
-}
+//    private final List<Product> products = Arrays.asList(
+//			new Product("A01","Motherboard", 100, "Plug everything into this"),
+//			new Product("B02","Ram", 50, "Random access memory"),
+//			new Product("C03","Processor", 200, "The Brain of your computer"),
+//			new Product("D04","Graphics Card", 5000, "For video games and to make the computer very expensive especially now that everyone is crytpo mining")
+//	);
+//	
+//	public List<Product> getAllProducts(){
+//		return products;
+//	}
+//	
+//	public List<Product> getProductsThatContain(String search){
+//		List<Product> ret = new ArrayList<>();
+//		
+//		products.stream().filter
+//				((prod) -> 
+//						(prod.getProductName().contains(search) || prod.getDescription().contains(search))
+//				).forEachOrdered((prod) -> {
+//									ret.add(prod);
+//								});
+//		
+//		return ret;
+//	}
+//	
+//	public Product getProductById(String searchId){
+//		for(Product prod : products){
+//			if(prod.getProductId().equals(searchId))
+//				return prod;
+//		}
+//		
+//		return null;
+//	}
+//    
+//}

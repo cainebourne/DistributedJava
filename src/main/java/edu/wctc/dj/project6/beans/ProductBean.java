@@ -34,7 +34,7 @@ public final class ProductBean implements Serializable{
 	/**
 	 * Creates a new instance of ProductBean
 	 */
-	public ProductBean() {
+	public ProductBean() throws Exception {
 		setProducts(productService.getAllProducts());
 		System.out.println("new Bean");
 	}
