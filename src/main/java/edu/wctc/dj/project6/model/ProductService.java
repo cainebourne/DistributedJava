@@ -1,6 +1,8 @@
 
 package edu.wctc.dj.project6.model;
 
+import edu.wctc.dj.project6.data.CustomerDAO;
+import edu.wctc.dj.project6.data.ProductsDAO;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -11,7 +13,33 @@ import java.util.List;
  */
 public class ProductService {
     
-        private final List<Product> products = Arrays.asList(
+       //could not figure out how to implement this section after following class video
+	
+	/*public List<Product> getAllProducts() throws Exception{
+		ProductsDAO productDAO = new ProductsDAO();
+                List<Product> productList = productDAO.getProducts();
+                
+                if(productList != null){
+                     CustomerDAO customerDao = new  CustomerDAO();
+                    for (Product product : productList){
+                        product.setCustomerName
+                        
+                    }
+                         
+                }
+	}
+	
+	public List<Product> getProductsThatContain(String search){
+		//todo
+                return null;
+	}
+	
+	public Product getProductById(String searchId){
+		//todo
+                return null;
+}*/
+    
+    private final List<Product> products = Arrays.asList(
 			new Product("A01","Motherboard", 100, "Plug everything into this"),
 			new Product("B02","Ram", 50, "Random access memory"),
 			new Product("C03","Processor", 200, "The Brain of your computer"),
@@ -43,4 +71,5 @@ public class ProductService {
 		
 		return null;
 	}
+    
 }
