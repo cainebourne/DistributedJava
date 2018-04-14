@@ -9,7 +9,7 @@ import javax.faces.bean.SessionScoped;
 
 /**
  *
- * @author David
+ * @author cainebourne
  */
 @Named(value = "shoppingCartBean")
 @Dependent
