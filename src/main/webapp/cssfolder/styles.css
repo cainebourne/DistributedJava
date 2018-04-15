@@ -1,0 +1,104 @@
+﻿/* CSS Document */
+html,
+body {
+	background-color: #F7F7F7;
+	font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding:0;
+    height: 100%;
+    
+}
+
+#container {
+   min-height:100%;
+   position:relative;
+   
+}
+
+h1 {
+		font-size: 40px;
+		text-align:center;
+		padding: 30px 0 15px 0;
+		margin-top: 0px;
+}
+h2 {
+		font-size: 30px;
+}
+
+.graytext {
+		color: #808080;
+		font-weight:normal;
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #808080;
+    text-transform:uppercase;
+    text-align:center;
+    font-size: 0;
+    
+}
+
+li {
+    font-weight: bold;
+	font-size: 14px;
+	display:inline-block;
+
+}
+
+li a {
+    display: block;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px 35px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #4CAF50;
+}
+li a:active {
+    background-color: #4CAF50;
+}
+
+
+.active {
+    background-color: #4CAF50;
+}
+
+#section {
+    font-size: 12px;
+    width: 700px;
+    margin: 0 auto;
+    padding: 20px 0 60px 0;
+    
+	
+}
+#content {
+    font-size: 12px;
+    
+}
+
+
+p {
+    display: block;
+    margin: 24px 0 24px 0;
+}
+strong {
+    font-weight: bold;
+    text-transform:uppercase;
+}
+#footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:40px;
+   text-align:center;
+   background-color: #808080;
+   color: #FFFFFF;
+   padding-top: 20px;
+}
