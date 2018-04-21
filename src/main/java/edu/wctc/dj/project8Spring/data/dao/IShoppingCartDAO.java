@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  *
- * @author David
+ * @author cainebourne
  */
 public interface IShoppingCartDAO extends JpaRepository<ShoppingCart, Integer>{
 
