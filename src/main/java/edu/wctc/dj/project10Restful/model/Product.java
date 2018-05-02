@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import java.util.Objects;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -17,7 +19,8 @@ import javax.persistence.Table;
 @Table(name="PRODUCTS")
 public class Product implements Serializable{
 	@Id
-	private String productId;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Integer productId;
 	
 	private String productName;
 	
@@ -25,14 +28,14 @@ public class Product implements Serializable{
 	
 	private Double price;
 	
-	public Product(String productId,String productName, Double price, String description){
+	public Product(Integer productId,String productName, Double price, String description){
 		setProductId(productId);
 		setProductName(productName);
 		setPrice(price);
 		setDescription(description);
 	}
 	
-	public Product(String productId,String productName, Double price){
+	public Product(Integer productId,String productName, Double price){
 		this(productId,productName,price, "");
 	}
 
@@ -47,11 +50,11 @@ public class Product implements Serializable{
 		this.productName = productName;
 	}
 
-	public String getProductId() {
+	public Integer getProductId() {
 		return productId;
 	}
 
-	public void setProductId(String productId) {
+	public void setProductId(Integer productId) {
 		this.productId = productId;
 	}
 
@@ -73,7 +76,7 @@ public class Product implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Product{ productId=" + productId + ", productName=" + productName + ", description=" + description + ", price=" + price + '}';
+		return "Product{ productId=" + productId + '}';
 	}
 
 	@Override
