@@ -76,8 +76,8 @@ public final class ShoppingCartBean implements Serializable{
 	public void setProduct(Product prod){
 		this.product = prod;
 	}
-	
-	public void addToCart(AjaxBehaviorEvent event){
+	        
+        public void addToCart(AjaxBehaviorEvent event){
 		System.out.println("Attempting add amount = " + this.amount + "product = " + this.product);
 		if(this.amount == null)
 			throw new IllegalArgumentException("Amount null :(");
@@ -89,7 +89,7 @@ public final class ShoppingCartBean implements Serializable{
 		try{
 			FacesContext.getCurrentInstance().getExternalContext().redirect("/Project10Restful/ProductList");
 		}catch(IOException e){
-			FacesMessage message = new FacesMessage("IOException", product.getProductId());
+			FacesMessage message = new FacesMessage("IOException",  product.getProductId().toString());
 			FacesContext.getCurrentInstance().addMessage(null, message);
 		}
 	}
